@@ -160,7 +160,8 @@ void SOSBank_next(SOSBank *unit, int inNumSamples)
                 int ind = n + channel*numSecs;
                 OUT(channel)[i] += a0[ind]*v + a1[ind]*v1[n] + a2[ind]*v2[n];
             }
-            v2[n] = kill_denormals(v1[n]); v1[n] = kill_denormals(v);
+            //v2[n] = kill_denormals(v1[n]); v1[n] = kill_denormals(v);
+            v2[n] = v1[n]; v1[n] = v;
         }
         
     }
